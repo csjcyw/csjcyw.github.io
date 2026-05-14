@@ -19,19 +19,16 @@
             scroll-behavior: smooth;
         }
 
-        /* 主容器 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 24px 80px;
         }
 
-        /* 区块间距 */
         section {
             margin-bottom: 80px;
         }
 
-        /* 标题样式 - 更精致 */
         .section-title {
             font-size: 28px;
             font-weight: 700;
@@ -42,7 +39,6 @@
             letter-spacing: -0.3px;
         }
 
-        /* 头部区域 */
         .hero {
             text-align: center;
             margin-bottom: 80px;
@@ -73,18 +69,12 @@
             letter-spacing: 0.5px;
         }
 
-        /* 正文样式 */
         .body-text {
             font-size: 16px;
             line-height: 1.8;
             color: #E0E0E0;
         }
 
-        .body-text p {
-            margin-bottom: 16px;
-        }
-
-        /* 列表样式 - 更精致 */
         .custom-list {
             list-style: none;
             padding-left: 0;
@@ -104,7 +94,6 @@
             font-weight: 500;
         }
 
-        /* 网格布局 */
         .grid-2cols {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -119,7 +108,6 @@
             margin-top: 24px;
         }
 
-        /* 图片容器 - 带悬浮效果 */
         .img-wrapper {
             width: 100%;
             overflow: hidden;
@@ -139,14 +127,16 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.4s ease;
         }
 
-        .img-wrapper:hover img {
-            transform: scale(1.02);
+        .photo-hint {
+            background: rgba(212, 165, 116, 0.05);
+            padding: 12px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
-        /* 联系方式区域 - 更精致 */
         .contact-block {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
             backdrop-filter: blur(2px);
@@ -205,16 +195,6 @@
             border-left: 2px solid #D4A574;
         }
 
-        /* 实拍展示区域提示文字美化 */
-        .photo-hint {
-            background: rgba(212, 165, 116, 0.05);
-            padding: 12px 20px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        /* 响应式 */
         @media (max-width: 768px) {
             .container {
                 padding: 40px 20px 60px;
@@ -250,14 +230,6 @@
                 gap: 16px;
             }
         }
-
-        /* 装饰性分割线 */
-        .deco-line {
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.3), transparent);
-            margin: 20px 0 0;
-        }
     </style>
 </head>
 <body>
@@ -281,7 +253,7 @@
     <section>
         <h2 class="section-title">实拍展示</h2>
         <div class="photo-hint">
-            <span class="body-text" style="margin: 0;">📷 过机/紫外线实拍视频由于文档限制请联系下方联系方式查看</span>
+            <span class="body-text" style="margin: 0;">过机/紫外线实拍视频由于文档限制请联系下方联系方式查看</span>
         </div>
         <!-- 第一行：两张并排，比例 4:3 -->
         <div class="grid-2cols">
@@ -336,7 +308,6 @@
             <li>发出后向收货方提供快递单号及物流信息，到货后请检查外包装是否完整如破损请全程录制拆包视频，要求录制单号及盒子，以便售后；</li>
             <li>若有问题请第一时间联系进行售后，无视频录像及收货地址留错不提供售后。</li>
         </ul>
-        <!-- 两张图左右并排，比例 4:3 -->
         <div class="grid-2cols">
             <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
                 < img src="https://iili.io/BmGI6FI.jpg" alt="快递发货图1">
@@ -389,7 +360,7 @@
                 <strong>账号2</strong> 145417153
             </div>
             <div class="note-text">
-                过机/紫外线及更多细节实拍由于网页限制请联系上方联系方式查看
+                过机/紫外线及更多细节实拍由于文档限制请联系上方联系方式查看
             </div>
         </div>
     </section>
