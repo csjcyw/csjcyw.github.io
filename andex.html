@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>昌盛业务 | 官方站</title>
+    <title>昌盛业务 | 官方通道</title>
     <style>
         * {
             margin: 0;
@@ -19,44 +19,40 @@
             scroll-behavior: smooth;
         }
 
-        /* 主容器：最大宽度1200px，居中 */
+        /* 主容器 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 24px 80px;
         }
 
-        /* 通用区块间距 */
+        /* 区块间距 */
         section {
-            margin-bottom: 70px;
+            margin-bottom: 80px;
         }
 
-        /* 标题通用样式 */
-        h1, h2 {
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-
+        /* 标题样式 - 更精致 */
         .section-title {
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             color: #ffffff;
             border-left: 4px solid #B8860B;
             padding-left: 20px;
+            letter-spacing: -0.3px;
         }
 
         /* 头部区域 */
         .hero {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 80px;
         }
 
         .hero h1 {
             font-size: 48px;
             font-weight: 800;
             letter-spacing: 2px;
-            background: linear-gradient(135deg, #FFFFFF 0%, #E0E0E0 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #D4A574 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -66,28 +62,29 @@
         .hero-divider {
             width: 60px;
             height: 2px;
-            background-color: #B8860B;
+            background: linear-gradient(90deg, transparent, #B8860B, #D4A574, #B8860B, transparent);
             margin: 0 auto 24px;
         }
 
         .hero-sub {
             font-size: 20px;
-            color: #CCCCCC;
+            color: #AAAAAA;
             font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         /* 正文样式 */
         .body-text {
             font-size: 16px;
-            line-height: 1.7;
-            color: #E6E6E6;
+            line-height: 1.8;
+            color: #E0E0E0;
         }
 
         .body-text p {
             margin-bottom: 16px;
         }
 
-        /* 列表样式（洗货渠道 / 交易规则 / 快递规则等） */
+        /* 列表样式 - 更精致 */
         .custom-list {
             list-style: none;
             padding-left: 0;
@@ -96,92 +93,125 @@
             margin-bottom: 14px;
             padding-left: 24px;
             position: relative;
-            line-height: 1.7;
-            color: #E6E6E6;
+            line-height: 1.75;
+            color: #E0E0E0;
         }
         .custom-list li::before {
             content: "▸";
             position: absolute;
             left: 0;
-            color: #B8860B;
+            color: #D4A574;
             font-weight: 500;
         }
 
-        /* 实拍展示区域：五张图布局 */
+        /* 网格布局 */
         .grid-2cols {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 24px;
             margin-top: 24px;
         }
+
         .grid-3cols {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 20px;
+            gap: 24px;
+            margin-top: 24px;
         }
 
-        /* 通用图片占位块：灰色圆角矩形，无文字，背景 #2A2A2A */
-        .img-placeholder {
-            background-color: #2A2A2A;
-            border-radius: 20px;
+        /* 图片容器 - 带悬浮效果 */
+        .img-wrapper {
             width: 100%;
-            aspect-ratio: 1 / 1; /* 正方形占位，美观统一 */
-            transition: all 0.2s ease;
+            overflow: hidden;
+            border-radius: 20px;
+            background-color: #1E1E1E;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        /* 快递规则下方两张图：上下排列（一列两张） */
-        .stack-2cols {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 28px;
-        }
-        .stack-2cols .img-placeholder {
-            aspect-ratio: 16 / 9; /* 更宽比例适合展示场景 */
+        .img-wrapper:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
         }
 
-        /* 昌盛产品质量至上区域两张图 */
-        .quality-gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 28px;
-        }
-        .quality-gallery .img-placeholder {
-            aspect-ratio: 16 / 9;
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
         }
 
-        /* 联系方式区域特殊样式 */
+        .img-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        /* 联系方式区域 - 更精致 */
         .contact-block {
-            background: rgba(255, 255, 255, 0.03);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(2px);
             border-radius: 32px;
-            padding: 32px;
-            border: 1px solid rgba(184, 134, 11, 0.3);
+            padding: 36px 32px;
+            border: 1px solid rgba(184, 134, 11, 0.25);
+            transition: border-color 0.3s ease;
         }
+
+        .contact-block:hover {
+            border-color: rgba(184, 134, 11, 0.5);
+        }
+
         .contact-item {
             font-size: 18px;
             margin-bottom: 16px;
             word-break: break-all;
-            font-family: monospace;
+            font-family: 'SF Mono', 'Fira Code', monospace;
         }
+
         .contact-item strong {
-            color: #B8860B;
+            color: #D4A574;
             font-weight: 600;
             margin-right: 12px;
         }
+
         .link-tg {
-            color: #B8860B;
+            color: #D4A574;
             text-decoration: none;
-            border-bottom: 1px dashed rgba(184,134,11,0.4);
+            border-bottom: 1px dashed rgba(212, 165, 116, 0.4);
+            transition: border-color 0.2s;
         }
+
         .link-tg:hover {
-            color: #D4A017;
+            border-bottom-color: #D4A574;
         }
+
         .buyu-link {
-            color: #B8860B;
+            color: #D4A574;
             text-decoration: underline;
             word-break: break-all;
+            transition: opacity 0.2s;
+        }
+
+        .buyu-link:hover {
+            opacity: 0.8;
+        }
+
+        .note-text {
+            background: rgba(212, 165, 116, 0.08);
+            padding: 14px 20px;
+            border-radius: 20px;
+            margin: 24px 0 0;
+            font-size: 14px;
+            color: #BBBBBB;
+            border-left: 2px solid #D4A574;
+        }
+
+        /* 实拍展示区域提示文字美化 */
+        .photo-hint {
+            background: rgba(212, 165, 116, 0.05);
+            padding: 12px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
         /* 响应式 */
@@ -200,12 +230,16 @@
                 padding-left: 16px;
             }
             .grid-2cols, .grid-3cols {
-                gap: 12px;
+                gap: 16px;
             }
             .contact-item {
                 font-size: 15px;
             }
+            .contact-block {
+                padding: 24px 20px;
+            }
         }
+
         @media (max-width: 640px) {
             .grid-3cols {
                 grid-template-columns: 1fr;
@@ -215,33 +249,14 @@
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
-            .contact-block {
-                padding: 24px;
-            }
         }
 
-        /* 横线细节 */
-        hr {
-            border: none;
-            border-top: 1px solid rgba(184,134,11,0.2);
-            margin: 20px 0;
-        }
-
-        /* 保证每个列表严格跟随原文 */
-        .note-text {
-            background: rgba(184,134,11,0.08);
-            padding: 12px 20px;
-            border-radius: 16px;
+        /* 装饰性分割线 */
+        .deco-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.3), transparent);
             margin: 20px 0 0;
-            font-size: 14px;
-            color: #CCCCCC;
-        }
-        .inline-code {
-            background: #1E1E1E;
-            padding: 2px 6px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.9em;
         }
     </style>
 </head>
@@ -254,7 +269,7 @@
         <div class="hero-sub">总说钱不重要，可生活处处明码标价</div>
     </div>
 
-    <!-- 2. 关于昌盛（纯文字） -->
+    <!-- 2. 关于昌盛 -->
     <section>
         <h2 class="section-title">关于昌盛</h2>
         <div class="body-text">
@@ -262,25 +277,36 @@
         </div>
     </section>
 
-    <!-- 3. 实拍展示（文字+五张图） -->
+    <!-- 3. 实拍展示 -->
     <section>
         <h2 class="section-title">实拍展示</h2>
-        <div class="body-text" style="margin-bottom: 24px;">
-            <p>过机/紫外线实拍视频由于文档限制请联系下方联系方式查看</p >
+        <div class="photo-hint">
+            <span class="body-text" style="margin: 0;">📷 过机/紫外线实拍视频由于文档限制请联系下方联系方式查看</span>
         </div>
-        <!-- 五张图布局：第一行2张，第二行3张 -->
+        <!-- 第一行：两张并排，比例 4:3 -->
         <div class="grid-2cols">
-            <div class="img-placeholder"></div>
-            <div class="img-placeholder"></div>
+            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+                < img src="https://iili.io/BmEUieS.jpg" alt="实拍展示图1">
+            </div>
+            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+                < img src="https://iili.io/BmGqfR4.jpg" alt="实拍展示图2">
+            </div>
         </div>
-        <div class="grid-3cols" style="margin-top: 20px;">
-            <div class="img-placeholder"></div>
-            <div class="img-placeholder"></div>
-            <div class="img-placeholder"></div>
+        <!-- 第二行：三张并排，比例 3:4 -->
+        <div class="grid-3cols">
+            <div class="img-wrapper" style="aspect-ratio: 3 / 4;">
+                < img src="https://iili.io/BmGqDru.jpg" alt="实拍展示图3">
+            </div>
+            <div class="img-wrapper" style="aspect-ratio: 3 / 4;">
+                < img src="https://iili.io/BmGn9WB.jpg" alt="实拍展示图4">
+            </div>
+            <div class="img-wrapper" style="aspect-ratio: 3 / 4;">
+                < img src="https://iili.io/BmGoB2e.jpg" alt="实拍展示图5">
+            </div>
         </div>
     </section>
 
-    <!-- 4. 洗货渠道（纯文字） -->
+    <!-- 4. 洗货渠道 -->
     <section>
         <h2 class="section-title">洗货渠道</h2>
         <ul class="custom-list">
@@ -289,7 +315,7 @@
         </ul>
     </section>
 
-    <!-- 5. 交易规则（纯文字） -->
+    <!-- 5. 交易规则 -->
     <section>
         <h2 class="section-title">交易规则</h2>
         <ul class="custom-list">
@@ -300,7 +326,7 @@
         </ul>
     </section>
 
-    <!-- 6. 快递发货方式及规则 + 下方两张图（上下排列） -->
+    <!-- 6. 快递发货方式及规则 + 下方两张图（左右并排，比例 4:3） -->
     <section>
         <h2 class="section-title">快递发货方式及规则</h2>
         <ul class="custom-list">
@@ -310,23 +336,31 @@
             <li>发出后向收货方提供快递单号及物流信息，到货后请检查外包装是否完整如破损请全程录制拆包视频，要求录制单号及盒子，以便售后；</li>
             <li>若有问题请第一时间联系进行售后，无视频录像及收货地址留错不提供售后。</li>
         </ul>
-        <!-- 紧跟两张图：一列两张，上下排列，各占100%宽度 -->
-        <div class="stack-2cols">
-            <div class="img-placeholder"></div>
-            <div class="img-placeholder"></div>
+        <!-- 两张图左右并排，比例 4:3 -->
+        <div class="grid-2cols">
+            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+                < img src="https://iili.io/BmGI6FI.jpg" alt="快递发货图1">
+            </div>
+            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+                < img src="https://iili.io/BmGushG.jpg" alt="快递发货图2">
+            </div>
         </div>
     </section>
 
-    <!-- 7. 昌盛产品质量至上，交易安全至上（标题 + 两张图上下排列） -->
+    <!-- 7. 昌盛产品质量至上，交易安全至上 + 两张图（左右并排，比例 4:3） -->
     <section>
         <h2 class="section-title">昌盛产品质量至上，交易安全至上</h2>
-        <div class="quality-gallery">
-            <div class="img-placeholder"></div>
-            <div class="img-placeholder"></div>
+        <div class="grid-2cols">
+            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+                < img src="https://iili.io/BmG5KdB.jpg" alt="质量展示图1">
+            </div>
+            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+                < img src="https://iili.io/BmGa7kB.png" alt="质量展示图2">
+            </div>
         </div>
     </section>
 
-    <!-- 8. 买U教程（纯文字） -->
+    <!-- 8. 买U教程 -->
     <section>
         <h2 class="section-title">买U教程</h2>
         <ul class="custom-list">
@@ -335,7 +369,7 @@
         </ul>
     </section>
 
-    <!-- 9. 联系方式（纯文字，含加密通讯及备选账号） -->
+    <!-- 9. 联系方式 -->
     <section>
         <h2 class="section-title">联系方式</h2>
         <div class="contact-block">
@@ -345,8 +379,8 @@
             <div class="contact-item">
                 <strong>TG(电报)</strong> <a href="https://t.me/CSJCYE" target="_blank" rel="noopener noreferrer" class="link-tg">@CSJCYE</a >
             </div>
-            <div class="body-text" style="margin: 16px 0 12px; font-size: 15px;">
-                如没有梯子或无TG账号请浏览器搜索编辑聊天下载注册后搜索下方账号联系
+            <div class="body-text" style="margin: 20px 0 12px; font-size: 15px; color: #CCCCCC;">
+                如没有梯子或无TG账号请浏览器搜索蝙蝠聊天下载注册后搜索下方账号联系
             </div>
             <div class="contact-item">
                 <strong>账号1</strong> 146368318
@@ -354,16 +388,11 @@
             <div class="contact-item">
                 <strong>账号2</strong> 145417153
             </div>
-            <div class="note-text" style="margin-top: 24px;">
-                过机/紫外线及更多细节实拍由于文档限制请联系上方联系方式查看
+            <div class="note-text">
+                过机/紫外线及更多细节实拍由于网页限制请联系上方联系方式查看
             </div>
         </div>
     </section>
 </div>
-
-<!-- 所有图片占位均为灰色圆角矩形，不添加任何文字，完全符合要求。 
-     深色主题 #0A0A0A，内容最大宽度1200px 居中，所有文字未删改。 
-     排版顺序严格按照头部->关于昌盛->实拍展示->洗货渠道->交易规则->快递发货方式及规则（含两张图）->昌盛产品质量至上，交易安全至上（两张图）->买U教程->联系方式。 
-     字体 Inter + 后备无衬线体。 横线60px 深金色，头部居中。 全局无遗漏细节。 -->
 </body>
 </html>
