@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <title>昌盛业务 | 官方通道</title>
     <style>
         * {
@@ -10,20 +10,24 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             background-color: #0A0A0A;
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'PingFang SC', 'Microsoft YaHei', sans-serif;
             color: white;
             line-height: 1.5;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 24px 80px;
         }
+
         section {
             margin-bottom: 80px;
         }
+
         .section-title {
             font-size: 28px;
             font-weight: 700;
@@ -32,10 +36,12 @@
             border-left: 4px solid #B8860B;
             padding-left: 20px;
         }
+
         .hero {
             text-align: center;
             margin-bottom: 80px;
         }
+
         .hero h1 {
             font-size: 48px;
             font-weight: 800;
@@ -45,25 +51,30 @@
             color: transparent;
             margin-bottom: 24px;
         }
+
         .hero-divider {
             width: 60px;
             height: 2px;
             background: linear-gradient(90deg, transparent, #B8860B, #D4A574, #B8860B, transparent);
             margin: 0 auto 24px;
         }
+
         .hero-sub {
             font-size: 20px;
             color: #AAAAAA;
         }
+
         .body-text {
             font-size: 16px;
             line-height: 1.8;
             color: #E0E0E0;
         }
+
         .custom-list {
             list-style: none;
             padding-left: 0;
         }
+
         .custom-list li {
             margin-bottom: 14px;
             padding-left: 24px;
@@ -71,36 +82,29 @@
             line-height: 1.75;
             color: #E0E0E0;
         }
+
         .custom-list li::before {
             content: "▸";
             position: absolute;
             left: 0;
             color: #D4A574;
         }
-        /* 强制图片并列：手机也保持并排，不换行 */
+
+        /* 图片网格 - 强制并列 */
         .grid-2cols {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
             margin-top: 24px;
         }
+
         .grid-3cols {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
             margin-top: 24px;
         }
-        /* 手机端依然并列，不变成单列 */
-        @media (max-width: 640px) {
-            .grid-2cols {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .grid-3cols {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 12px;
-            }
-        }
+
         .img-wrapper {
             width: 100%;
             overflow: hidden;
@@ -108,68 +112,170 @@
             background-color: #1E1E1E;
             transition: transform 0.3s ease;
         }
+
         .img-wrapper:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
         }
+
         .img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
         }
+
         .photo-hint {
-            background: rgba(212,165,116,0.05);
+            background: rgba(212, 165, 116, 0.05);
             padding: 12px 20px;
             border-radius: 40px;
             display: inline-block;
             margin-bottom: 20px;
         }
+
         .contact-block {
-            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
             border-radius: 32px;
             padding: 36px 32px;
-            border: 1px solid rgba(184,134,11,0.25);
+            border: 1px solid rgba(184, 134, 11, 0.25);
         }
+
         .contact-item {
             font-size: 18px;
             margin-bottom: 16px;
             word-break: break-all;
             font-family: monospace;
         }
+
         .contact-item strong {
             color: #D4A574;
             margin-right: 12px;
         }
+
         .link-tg {
             color: #D4A574;
             text-decoration: none;
-            border-bottom: 1px dashed rgba(212,165,116,0.4);
+            border-bottom: 1px dashed rgba(212, 165, 116, 0.4);
         }
+
         .normal-link {
             color: #D4A574;
             text-decoration: none;
             word-break: break-all;
         }
+
         .normal-link:hover {
             text-decoration: underline;
         }
+
         .buyu-link {
             color: #D4A574;
             text-decoration: none;
             word-break: break-all;
         }
+
         .buyu-link:hover {
             text-decoration: underline;
         }
+
         .note-text {
-            background: rgba(212,165,116,0.08);
+            background: rgba(212, 165, 116, 0.08);
             padding: 14px 20px;
             border-radius: 20px;
             margin: 24px 0 0;
             font-size: 14px;
             color: #BBBBBB;
             border-left: 2px solid #D4A574;
+        }
+
+        /* ========== 手机端专属优化 ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 16px 50px;
+            }
+
+            section {
+                margin-bottom: 50px;
+            }
+
+            /* 手机端标题字号缩小 */
+            .section-title {
+                font-size: 22px;
+                padding-left: 14px;
+                margin-bottom: 20px;
+            }
+
+            /* 手机端头部字号缩小 */
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-sub {
+                font-size: 16px;
+            }
+
+            /* 手机端正文字号 */
+            .body-text {
+                font-size: 14px;
+            }
+
+            .custom-list li {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            /* 手机端图片：增大图片高度（让图片更大），同时保持并列 */
+            .img-wrapper {
+                aspect-ratio: 4 / 3;
+            }
+
+            /* 第二行3:4的图片单独处理，让它们在手机上也更大 */
+            .grid-3cols .img-wrapper {
+                aspect-ratio: 3 / 4;
+            }
+
+            /* 手机端图片间距稍微缩小 */
+            .grid-2cols, .grid-3cols {
+                gap: 10px;
+            }
+
+            /* 手机端联系方式区域 */
+            .contact-block {
+                padding: 20px 18px;
+            }
+
+            .contact-item {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .photo-hint span {
+                font-size: 13px;
+            }
+
+            .note-text {
+                font-size: 12px;
+                padding: 10px 14px;
+            }
+        }
+
+        /* 超小屏手机（宽度小于400px）进一步优化 */
+        @media (max-width: 480px) {
+            .grid-2cols {
+                gap: 8px;
+            }
+
+            .grid-3cols {
+                gap: 8px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
@@ -195,22 +301,22 @@
         </div>
         <!-- 第一行：两张并排 4:3 -->
         <div class="grid-2cols">
-            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmEUieS.jpg" alt="实拍展示图1">
             </div>
-            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmGqfR4.jpg" alt="实拍展示图2">
             </div>
         </div>
         <!-- 第二行：三张并排 3:4 -->
         <div class="grid-3cols">
-            <div class="img-wrapper" style="aspect-ratio: 3 / 4;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmGqDru.jpg" alt="实拍展示图3">
             </div>
-            <div class="img-wrapper" style="aspect-ratio: 3 / 4;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmGn9WB.jpg" alt="实拍展示图4">
             </div>
-            <div class="img-wrapper" style="aspect-ratio: 3 / 4;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmGoB2e.jpg" alt="实拍展示图5">
             </div>
         </div>
@@ -220,7 +326,7 @@
         <h2 class="section-title">洗货渠道</h2>
         <ul class="custom-list">
             <li>打牌、夜场自用、超市或菜市场换现，买瓶水买个打火机换找零，KTV、吃饭、潇洒自用；</li>
-            <li>B/C类点验机包过，只要不去柜台和ATм机包你花的出去。</li>
+            <li>B/C类点验机包过，只要不去柜台和ATM机包你花的出去。</li>
         </ul>
     </section>
 
@@ -245,10 +351,10 @@
         </ul>
         <!-- 快递两张图 左右并排 4:3 -->
         <div class="grid-2cols">
-            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmGI6FI.jpg" alt="快递发货图1">
             </div>
-            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmGushG.jpg" alt="快递发货图2">
             </div>
         </div>
@@ -257,10 +363,10 @@
     <section>
         <h2 class="section-title">昌盛产品质量至上，交易安全至上</h2>
         <div class="grid-2cols">
-            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmG5KdB.jpg" alt="质量展示图1">
             </div>
-            <div class="img-wrapper" style="aspect-ratio: 4 / 3;">
+            <div class="img-wrapper">
                 <img src="https://iili.io/BmGa7kB.png" alt="质量展示图2">
             </div>
         </div>
@@ -269,7 +375,7 @@
     <section>
         <h2 class="section-title">买U教程</h2>
         <ul class="custom-list">
-            <li>购宝下载链接：<a href="https://www.fafa0858.com/" target="_blank" rel="noopener noreferrer" style="color: #D4A574; text-decoration: none;">https://www.fafa0858.com/</a></li>
+            <li>购宝下载链接：<a href=" " class="buyu-link" target="_blank" rel="noopener noreferrer">https://www.fafa0858.com/</a ></li>
             <li>安装后按操作即可买U，如不会操作联系下方联系方式</li>
         </ul>
     </section>
