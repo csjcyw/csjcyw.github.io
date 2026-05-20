@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>昌盛 · 官方通道</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e8eef2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 20px;
+        }
+
+        /* 主容器 - 固定宽高，一屏完整显示，无需滚动 */
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            /* 确保内容紧凑，一屏展示 */
+        }
+
+        /* 顶部区域 - 昌盛 + 传送门 */
+        .header {
+            background: #1e2b32;
+            padding: 28px 20px 22px;
+            text-align: center;
+            position: relative;
+        }
+
+        .brand {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: 12px;
+            color: #E8B55A;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .portal {
+            display: inline-block;
+            background: rgba(232, 181, 90, 0.12);
+            padding: 6px 24px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #E8B55A;
+            letter-spacing: 2px;
+        }
+
+        /* 标语区域 */
+        .slogan {
+            background: #FDF8F0;
+            padding: 18px 20px;
+            text-align: center;
+            border-bottom: 1px solid #f0e4d0;
+        }
+
+        .slogan-main {
+            font-size: 18px;
+            font-weight: 600;
+            color: #B45A2A;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .slogan-sub {
+            font-size: 13px;
+            color: #C47A44;
+            background: #fff5e8;
+            display: inline-block;
+            padding: 4px 18px;
+            border-radius: 30px;
+        }
+
+        /* 按钮区域 - 紧凑布局 */
+        .btn-container {
+            padding: 30px 24px 24px;
+            background: #ffffff;
+        }
+
+        .btn-title {
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #8e9eab;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* 按钮组 */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .gate-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #F7F9FB;
+            border: 1px solid #E2E8ED;
+            border-radius: 60px;
+            padding: 12px 24px 12px 28px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .gate-btn:hover {
+            background: #ffffff;
+            border-color: #E8B55A;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transform: translateX(3px);
+        }
+
+        /* 按钮左侧 */
+        .btn-info {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .line-name {
+            font-size: 20px;
+            font-weight: 650;
+            color: #2c3e3f;
+        }
+
+        /* 线路一 推荐标签 */
+        .badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 30px;
+        }
+
+        .badge-rec {
+            background: #E8B55A;
+            color: #5a3515;
+        }
+
+        .badge-backup {
+            background: #E8EDF2;
+            color: #5f6c7a;
+        }
+
+        /* 右侧箭头 */
+        .arrow {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #C49A5E;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .gate-btn:hover .arrow {
+            background: #E8B55A;
+            color: white;
+            transform: translateX(3px);
+        }
+
+        /* 线路特色颜色 */
+        .line1 .line-name { color: #C46A2A; }
+        .line2 .line-name { color: #3A7B6E; }
+        .line3 .line-name { color: #6B5B7B; }
+
+        /* 底部官方区域 */
+        .footer {
+            background: #FAF6EF;
+            margin: 0 24px 28px 24px;
+            border-radius: 36px;
+            padding: 16px 16px;
+            text-align: center;
+            border: 1px solid #EFE0CD;
+        }
+
+        .footer-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #9E6D3A;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            font-size: 11px;
+            color: #B8844D;
+        }
+
+        /* 确保一屏内完整显示，无需滚动 - 限制最大高度 */
+        @media (max-height: 700px) {
+            .header { padding: 20px 20px 16px; }
+            .brand { font-size: 44px; }
+            .slogan { padding: 12px 20px; }
+            .btn-container { padding: 20px 24px 16px; }
+            .btn-group { gap: 12px; }
+            .gate-btn { padding: 9px 20px 9px 24px; }
+            .line-name { font-size: 18px; }
+            .footer { margin-bottom: 20px; padding: 12px; }
+        }
+
+        /* 移动端 */
+        @media (max-width: 450px) {
+            .card { border-radius: 36px; }
+            .brand { font-size: 40px; letter-spacing: 8px; }
+            .btn-info { gap: 8px; }
+            .line-name { font-size: 18px; }
+            .gate-btn { padding: 10px 18px; }
+            .arrow { width: 36px; height: 36px; font-size: 18px; }
+            .footer-info { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <!-- 头部：昌盛 + 传送门 -->
+    <div class="header">
+        <div class="brand">昌盛</div>
+        <div class="portal">传送门</div>
+    </div>
+
+    <!-- 诚信为本品质至上 -->
+    <div class="slogan">
+        <div class="slogan-main">诚信为本，品质至上</div>
+        <div class="slogan-sub">专业服务，贴心保障</div>
+    </div>
+
+    <!-- 三个线路按钮 -->
+    <div class="btn-container">
+        <div class="btn-title">— 选择通道 —</div>
+        <div class="btn-group">
+            <!-- 线路一（推荐） -->
+            <a href=" " id="link1" class="gate-btn line1" target="_blank" rel="noopener noreferrer">
+                <div class="btn-info">
+                    <span class="line-name">线路一</span>
+                    <span class="badge badge-rec">推荐</span>
+                </div>
+                <div class="arrow">→</div>
+            </a >
+
+            <!-- 线路二（备用） -->
+            <a href="#" id="link2" class="gate-btn line2" target="_blank" rel="noopener noreferrer">
+                <div class="btn-info">
+                    <span class="line-name">线路二</span>
+                    <span class="badge badge-backup">备用</span>
+                </div>
+                <div class="arrow">→</div>
+            </a >
+
+            <!-- 线路三（备用） -->
+            <a href="#" id="link3" class="gate-btn line3" target="_blank" rel="noopener noreferrer">
+                <div class="btn-info">
+                    <span class="line-name">线路三</span>
+                    <span class="badge badge-backup">备用</span>
+                </div>
+                <div class="arrow">→</div>
+            </a >
+        </div>
+    </div>
+
+    <!-- 底部官方通道 -->
+    <div class="footer">
+        <div class="footer-title">昌盛唯一官方通道</div>
+        <div class="footer-info">
+            <span>产品质量至上</span>
+            <span>交易安全至上</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ==================== 只需要改这里三个链接 ====================
+    const LINKS = {
+        line1: "https://ciscno001.github.io/Ciscn001/",   // 替换为线路一的文档链接
+        line2: "https://cangsheng874.github.io/cangsheng874/",   // 替换为线路二的文档链接
+        line3: "https://cangsheng874.github.io/cangsheng874/"    // 替换为线路三的文档链接
+    };
+    // ===========================================================
+
+    const btn1 = document.getElementById('link1');
+    const btn2 = document.getElementById('link2');
+    const btn3 = document.getElementById('link3');
+
+    function setLink(btn, url, name) {
+        if (!btn) return;
+        if (url && url !== "https://your-document-link-1.com" && url !== "https://your-document-link-2.com" && url !== "https://your-document-link-3.com" && url.startsWith("http")) {
+            btn.href = url;
+        } else {
+            btn.href = "javascript:void(0)";
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert(`请先在代码中配置 ${name} 的文档链接`);
+            });
+        }
+    }
+
+    setLink(btn1, LINKS.line1, "线路一");
+    setLink(btn2, LINKS.line2, "线路二");
+    setLink(btn3, LINKS.line3, "线路三");
+</script>
+</body>
+</html>
